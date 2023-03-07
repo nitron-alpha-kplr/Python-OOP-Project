@@ -2,3 +2,5 @@
 - Après avoir créer les différentes classes qui modélisent les produits de notre magasin, nous devons créer du code qui permet de gérer nos produits et leur inventaire.
 - Cette classe nous permettra de stocker des informations telles que la quantité en stock, les revenues et les dépenses liées à ce produit.
 - Donc, elle permet de gérer le stock lié à un seul produit.
+
+def class = InventoryProductEntry
