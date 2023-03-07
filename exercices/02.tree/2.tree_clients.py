@@ -1,8 +1,8 @@
 # Import des modules nécessaires
 import json
 from unidecode import unidecode
-from treelib import Tree
 import os
+from treelib import Tree
 
 # Get the directory path of the current Python file
 local_path = os.path.dirname(os.path.abspath(__file__))

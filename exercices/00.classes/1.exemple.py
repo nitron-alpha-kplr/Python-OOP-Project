@@ -15,6 +15,12 @@ class Moto(Vehicule):
         self.nb_roues = nb_roues
         self.cylindree = cylindree
 
+class vélo(Vehicule):
+    def __init__(self, marque, modele, annee, nb_vitesses):
+        super().__init__(marque, modele, annee)
+        self.nb_vitesses = nb_vitesses
+    
+
 """
 Dans cet exemple, la classe 'Vehicule' est la classe mère qui définit les attributs de base pour tous les véhicules, 
 à savoir la marque, le modèle et l'année. 
