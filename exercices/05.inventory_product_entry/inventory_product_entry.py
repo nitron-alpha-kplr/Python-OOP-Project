@@ -62,8 +62,14 @@ class InventoryProductEntry:
             class InventoryProductEntry:
   
   def add_product(self, product:Product, quantity):
-          def get_product(self, name):
-                  def list_products(self):
+      def get_product(self, name):
+           def list_products(self):
+                def sell(self, quantity):
+                        def restock(self, quantity):
+                             
+                             
+                                                             
+def __repr__(self):
 self.__produit = produit
 self.__quantité= quantité
 def Stocker(self, quantité):
