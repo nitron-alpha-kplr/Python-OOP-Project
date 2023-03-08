@@ -56,3 +56,20 @@ class InventoryProductEntry:
     """
     def __repr__(self):
         # Retourner une chaîne de caractères formatée contenant le nom du produit, la marque, la quantité en stock et le prix du produit.
+
+        class InventoryProductEntry:
+
+            class InventoryProductEntry:
+  
+  def add_product(self, product:Product, quantity):
+          def get_product(self, name):
+                  def list_products(self):
+self.__produit = produit
+self.__quantité= quantité
+def Stocker(self, quantité):
+if self.__Code < quantité :
+raise ValueError("quantité insuffisante")
+self.__nom produit -=stock
+def afficher_sstock(self):
+print("L'inventaire du stock de", self.__nom, "est de", self.__solde, "quantité"
+

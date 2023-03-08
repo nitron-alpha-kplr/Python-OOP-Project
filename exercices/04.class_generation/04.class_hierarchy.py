@@ -69,3 +69,20 @@ def write_content(content,filename):
 # Appeler la méthode generate_class_hierarchy pour générer le code des classes automatiquement en se basant sur le dictionnaire json_dict
 # Stocker le résultat de la classe dans une variable
 # Appeler la fonction write_content pour stocker le code des classes dans un fichier Python 'product_classes.py'
+
+
+def  generate_class_hierarchy ( json_dict : dict , superclass_name : str = None , superclass_args : list = []):
+    class_defs  =  ""
+
+    pour  class_name , class_attrs  dans  json_dict . articles ():
+
+        classe_def  =  classe_génération . generate_class_def ( class_name , class_attrs , superclass_name , superclass_args )
+        classe_defs  +=  classe_def
+
+        if  "sous-classes"  dans  class_attrs :
+            super_attr  = ( liste ( class_attrs . keys ()) + superclass_args )
+            super_attr . supprimer ( "sous-classes" )
+            subclass_defs  =  generate_class_hierarchy ( class_attrs [ "subclasses" ], class_name , super_attr )
+            class_defs  +=  subclass_defs
+
+    renvoie  class_defs

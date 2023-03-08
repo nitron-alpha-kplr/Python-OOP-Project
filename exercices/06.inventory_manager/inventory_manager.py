@@ -92,3 +92,9 @@ class InventoryManager:
             afficher la valeur correspondante à cette clé
         retourner le dictionnaire inventaire
         """
+
+      
+class InventoryManager:
+def product_exists(self,product:Product):
+def add_product(self, product:Product, quantity):
+def remove_product(self, product:Product):
