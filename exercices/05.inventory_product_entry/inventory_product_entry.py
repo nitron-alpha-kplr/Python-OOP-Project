@@ -57,6 +57,11 @@ class InventoryProductEntry:
     def __repr__(self):
         # Retourner une chaîne de caractères formatée contenant le nom du produit, la marque, la quantité en stock et le prix du produit.
 
+         Import des modules nécessaires
+import json
+from unidecode import unidecode
+import re
+
         class InventoryProductEntry:
 
             class InventoryProductEntry:
@@ -78,4 +83,8 @@ raise ValueError("quantité insuffisante")
 self.__nom produit -=stock
 def afficher_sstock(self):
 print("L'inventaire du stock de", self.__nom, "est de", self.__solde, "quantité"
+      
+      def write_content(content,filename):
+        with open(filename, "w", encoding='utf-8') as f:
+            f.write(content)
 

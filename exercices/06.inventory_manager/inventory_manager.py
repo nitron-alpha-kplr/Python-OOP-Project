@@ -92,7 +92,10 @@ class InventoryManager:
             afficher la valeur correspondante à cette clé
         retourner le dictionnaire inventaire
         """
-
+ Import des modules nécessaires
+import json
+from unidecode import unidecode
+import re
       
 class InventoryManager:
 def product_exists(self,product:Product):

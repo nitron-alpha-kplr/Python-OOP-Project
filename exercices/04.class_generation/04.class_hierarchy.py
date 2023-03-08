@@ -69,7 +69,12 @@ def write_content(content,filename):
 # Appeler la méthode generate_class_hierarchy pour générer le code des classes automatiquement en se basant sur le dictionnaire json_dict
 # Stocker le résultat de la classe dans une variable
 # Appeler la fonction write_content pour stocker le code des classes dans un fichier Python 'product_classes.py'
+# Import des modules nécessaires
 
+import json
+from unidecode import unidecode
+import re
+import os
 
 def  generate_class_hierarchy ( json_dict : dict , superclass_name : str = None , superclass_args : list = []):
     class_defs  =  ""
