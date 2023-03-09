@@ -1,26 +1,27 @@
-#La classe "InventoryManager" est une classe qui permet de gérer un inventaire de produits. 
+# La classe "InventoryManager" est une classe qui permet de gérer un inventaire de produits.
 
 class InventoryManager:
     # Initialisation de la classe
     def __init__(self):
         # Vous initialisez un dictionnaire 'inventory' qui stocke l'inventaire de tous les produits
         # Il prend comme clé le nom du produit, et la valeur est un objet InventoryProductEntry
-        self.inventory : Dict[str, InventoryProductEntry] = {}
+        self.inventory: Dict[str, InventoryProductEntry] = {}
 
-    #Méthode product_exists
+    # Méthode product_exists
     """"
-    La fonction prend un objet Product en entrée et vérifie si son nom est une clé dans le dictionnaire self.inventory. 
+    La fonction prend un objet Product en entrée et vérifie si son nom est une clé dans le dictionnaire self.inventory.
     Si c'est le cas, la fonction retourne True, sinon elle retourne False.
     """
-    def product_exists(self,product:Product):
+
+    def product_exists(self, product: Product):
         """
         pour chaque 'inventory_product_entry_key' dans self.inventory faire:
             si 'inventory_product_entry_key' est égal à product.name alors:
                 retourner True
         retourner False
         """
-    
-    #Méthode add_product
+
+    # Méthode add_product
     """
     La méthode add_product est utilisée pour ajouter un nouveau produit à l'inventaire.
     Elle prend en argument un objet Product et une quantité initiale.
@@ -98,7 +99,7 @@ import json
 from unidecode import unidecode
 import re
       
-class Inventory/Manager:
+class InventoryManager:
 
    def __init__(self):
        self.inventory : Dict[str, InventoryProductEntry] = {}
@@ -111,6 +112,6 @@ class Inventory/Manager:
                 def get_product(self, name):
                     def list_products(self):
 
-
+print (class InventoryManager) 
 
  

@@ -25,7 +25,9 @@ Elle prend les arguments suivant:
     - superclass_name : une chaîne de caractères représentant le nom de la classe parente. Par défaut, sa valeur est None pour la racine de la hiérarchie.
     - superclass_args : une liste des arguments des arguments de la classe mère à passer à la classe fille.
 """
-def generate_class_hierarchy(json_dict :dict, superclass_name:str=None,superclass_args:list=[]):
+
+
+def generate_class_hierarchy(json_dict: dict, superclass_name: str = None, superclass_args: list = []):
     # Initialisation de la chaîne de caractères contenant les définitions de classes
     class_defs = ""
 
@@ -50,8 +52,8 @@ def generate_class_hierarchy(json_dict :dict, superclass_name:str=None,superclas
     Retourne la chaîne de caractères contenant les définitions de classes
     
     """
-   
- 
+
+
 # la méthode write_content va nous permet d'écrire le code généré automatiquement des classes dans un fichier Python séparé
 """
 La méthode write_content prend deux arguments:
@@ -61,33 +63,33 @@ La méthode write_content prend deux arguments:
 La méthode utilise une clause with pour ouvrir le fichier en mode écriture ("w") en utilisant l'encodage "utf-8".
 Ensuite, elle écrit le contenu passé en argument dans le fichier à l'aide de la méthode write. 
 Après avoir terminé d'écrire dans le fichier, la méthode se termine et le fichier est automatiquement fermé grâce à l'utilisation de la clause with.
-"""    
-def write_content(content,filename):
-        with open(filename, "w", encoding='utf-8') as f:
-            f.write(content)
+"""
+
+
+def write_content(content, filename):
+    with open(filename, "w", encoding='utf-8') as f:
+        f.write(content)
 
 # Appeler la méthode generate_class_hierarchy pour générer le code des classes automatiquement en se basant sur le dictionnaire json_dict
 # Stocker le résultat de la classe dans une variable
 # Appeler la fonction write_content pour stocker le code des classes dans un fichier Python 'product_classes.py'
 # Import des modules nécessaires
 
-import json
-from unidecode import unidecode
-import re
-import os
 
-def  generate_class_hierarchy ( json_dict : dict , superclass_name : str = None , superclass_args : list = []):
-    class_defs  =  ""
+def generate_class_hierarchy(json_dict: dict, superclass_name: str = None, superclass_args: list = []):
+    class_defs = ""
 
-    pour  class_name , class_attrs  dans  json_dict . articles ():
+    pour  class_name, class_attrs  dans  json_dict . articles():
 
-        classe_def  =  classe_génération . generate_class_def ( class_name , class_attrs , superclass_name , superclass_args )
-        classe_defs  +=  classe_def
+        classe_def = classe_génération . generate_class_def(
+            class_name, class_attrs, superclass_name, superclass_args)
+        classe_defs += classe_def
 
-        if  "sous-classes"  dans  class_attrs :
-            super_attr  = ( liste ( class_attrs . keys ()) + superclass_args )
-            super_attr . supprimer ( "sous-classes" )
-            subclass_defs  =  generate_class_hierarchy ( class_attrs [ "subclasses" ], class_name , super_attr )
-            class_defs  +=  subclass_defs
+        if "sous-classes"  dans  class_attrs:
+            super_attr = (liste(class_attrs . keys()) + superclass_args)
+            super_attr . supprimer("sous-classes")
+            subclass_defs = generate_class_hierarchy(
+                class_attrs["subclasses"], class_name, super_attr)
+            class_defs += subclass_defs
 
     renvoie  class_defs

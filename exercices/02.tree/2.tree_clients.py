@@ -22,19 +22,23 @@ json_dict = json.loads(json_data)
 # Créer un nouvel arbre
 my_tree = Tree()
 
+
 def create_tree_from_dict(tree, parent_node_id, parent_dict):
     for key, value in parent_dict.items():
         if isinstance(value, dict):
             # Créer un nouveau noeud pour la clé courante du dictionnaire
             new_node_id = f"{parent_node_id}.{key}"
-            tree.create_node(tag=key, identifier=new_node_id, parent=parent_node_id)
-            
+            tree.create_node(tag=key, identifier=new_node_id,
+                             parent=parent_node_id)
+
             # Créer récursivement le sous-arbre pour le dictionnaire courant
             create_tree_from_dict(tree, new_node_id, value)
         else:
             # Créer un nouveau noeud pour la feuille courante du dictionnaire
             leaf_node_id = f"{parent_node_id}.{key}"
-            tree.create_node(tag=f"{key}: {value}", identifier=leaf_node_id, parent=parent_node_id)
+            tree.create_node(
+                tag=f"{key}: {value}", identifier=leaf_node_id, parent=parent_node_id)
+
 
 # Créer le noeud racine pour l'arbre
 my_tree.create_node(tag="Racine", identifier="racine")
@@ -44,4 +48,3 @@ create_tree_from_dict(my_tree, "racine", json_dict)
 
 # Afficher l'arbre
 my_tree.show()
-

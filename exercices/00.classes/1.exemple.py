@@ -4,22 +4,25 @@ class Vehicule:
         self.modele = modele
         self.annee = annee
 
+
 class Voiture(Vehicule):
     def __init__(self, marque, modele, annee, nb_portes):
         super().__init__(marque, modele, annee)
         self.nb_portes = nb_portes
 
+
 class Moto(Vehicule):
-    def __init__(self, marque, modele, annee, nb_roues,cylindree):
+    def __init__(self, marque, modele, annee, nb_roues, cylindree):
         super().__init__(marque, modele, annee)
         self.nb_roues = nb_roues
         self.cylindree = cylindree
+
 
 class vélo(Vehicule):
     def __init__(self, marque, modele, annee, nb_vitesses):
         super().__init__(marque, modele, annee)
         self.nb_vitesses = nb_vitesses
-    
+
 
 """
 Dans cet exemple, la classe 'Vehicule' est la classe mère qui définit les attributs de base pour tous les véhicules, 
@@ -51,7 +54,7 @@ De même, pour créer une instance de la classe Moto, vous pouvez utiliser la sy
 
 """
 
-moto1 = Moto("Yamaha", "MT-07", 2020, 2,300)
+moto1 = Moto("Yamaha", "MT-07", 2020, 2, 300)
 
 """
 Ceci crée une instance de la classe Moto avec les attributs suivants :
@@ -62,5 +65,3 @@ annee = 2020
 nb_roues = 2
 cylindree = 300
 """
-
-

@@ -1,4 +1,4 @@
-# A présent organisons un peu le code. 
+# A présent organisons un peu le code.
 # Nous allons utiliser des méthodes et fonctions pour isolers les modules
 
 """Ce code est un exemple d'utilisation de fonctions et de méthodes pour organiser le code et le rendre plus lisible. 
@@ -28,6 +28,7 @@ from unidecode import unidecode
 import os
 from treelib import Tree
 
+
 def json_dict_from_file():
     """
     Cette fonction ouvre et charge les données JSON du fichier
@@ -39,8 +40,9 @@ def json_dict_from_file():
     # Get the directory path of the current Python file
     local_path = os.path.dirname(os.path.abspath(__file__))
     # Chargement des données JSON à partir du fichier dans un dictionnaire python
-    json_data = json.load(open(os.path.join(local_path, 'json_data.json'), "rb"))
-    
+    json_data = json.load(
+        open(os.path.join(local_path, 'json_data.json'), "rb"))
+
     # il est nécessaire de reconvertir le dictionnaire en chaine de caractere pour le traiter ensuite
     json_str = json.dumps(json_data)
 
@@ -52,6 +54,7 @@ def json_dict_from_file():
     json_dict = json.loads(json_data)
 
     return json_dict
+
 
 def create_tree_from_dict(tree, parent_node_id, parent_dict):
     """
@@ -67,14 +70,17 @@ def create_tree_from_dict(tree, parent_node_id, parent_dict):
         if isinstance(value, dict):
             # Créer un nouveau noeud pour la clé courante du dictionnaire
             new_node_id = f"{parent_node_id}.{key}"
-            tree.create_node(tag=key, identifier=new_node_id, parent=parent_node_id)
-            
+            tree.create_node(tag=key, identifier=new_node_id,
+                             parent=parent_node_id)
+
             # Créer récursivement le sous-arbre pour le dictionnaire courant
             create_tree_from_dict(tree, new_node_id, value)
         else:
             # Créer un nouveau noeud pour la feuille courante du dictionnaire
             leaf_node_id = f"{parent_node_id}.{key}"
-            tree.create_node(tag=f"{key}: {value}", identifier=leaf_node_id, parent=parent_node_id)
+            tree.create_node(
+                tag=f"{key}: {value}", identifier=leaf_node_id, parent=parent_node_id)
+
 
 def main():
     """
@@ -94,6 +100,7 @@ def main():
 
     # Afficher l'arbre
     my_tree.show()
+
 
 if __name__ == '__main__':
     # Appeler la fonction principale

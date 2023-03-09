@@ -2,35 +2,39 @@
 A présent rajoutons une méthode afficher attributs dans chaque classe
 """
 
+
 class Vehicule:
     def __init__(self, marque, modele, annee):
         self.marque = marque
         self.modele = modele
         self.annee = annee
-    
+
     def afficher_attributs(self):
         print("Attributs pour le véhicule :")
         print("- Marque :", self.marque)
         print("- Modèle :", self.modele)
         print("- Année :", self.annee)
 
+
 class Voiture(Vehicule):
     def __init__(self, marque, modele, annee, nb_portes):
         super().__init__(marque, modele, annee)
         self.nb_portes = nb_portes
-    
+
     def afficher_attributs(self):
         super().afficher_attributs()
         print("- Nombre de portes :", self.nb_portes)
+
 
 class Moto(Vehicule):
     def __init__(self, marque, modele, annee, nb_roues):
         super().__init__(marque, modele, annee)
         self.nb_roues = nb_roues
-    
+
     def afficher_attributs(self):
         super().afficher_attributs()
         print("- Nombre de roues :", self.nb_roues)
+
 
 # Création d'une instance de chaque classe
 voiture1 = Voiture("Renault", "Clio", 2018, 5)
