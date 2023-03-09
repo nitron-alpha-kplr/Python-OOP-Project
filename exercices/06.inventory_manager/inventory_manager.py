@@ -25,7 +25,7 @@ class InventoryManager:
     La méthode add_product est utilisée pour ajouter un nouveau produit à l'inventaire.
     Elle prend en argument un objet Product et une quantité initiale.
     """
-    def add_product(self, product:Product, quantity):
+   def add_product(self, product:Product, quantity):
         """
         SI le produit existe déjà dans l'inventaire: 
             afficher un message pour informer l'utilisateur
@@ -91,13 +91,26 @@ class InventoryManager:
         pour chaque clé du dictionnaire 'inventory':
             afficher la valeur correspondante à cette clé
         retourner le dictionnaire inventaire
+        
         """
  Import des modules nécessaires
 import json
 from unidecode import unidecode
 import re
       
-class InventoryManager:
-def product_exists(self,product:Product):
-def add_product(self, product:Product, quantity):
-def remove_product(self, product:Product):
+class Inventory/Manager:
+
+   def __init__(self):
+       self.inventory : Dict[str, InventoryProductEntry] = {}
+        def product_exists(self,product:Product):
+         def add_product(self, product:Product, quantity):
+                def remove_product(self, product_name):
+                    
+    def sell_product(self, product_name, quantity):
+        def restock_product(self, product_name, quantity):
+                def get_product(self, name):
+                    def list_products(self):
+
+
+
+ 
