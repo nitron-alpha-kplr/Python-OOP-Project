@@ -75,8 +75,22 @@ class TestInventoryManager(unittest.TestCase):
         - Vérification que le premier résultat de la méthode list_products égal à la sortie attendue
         """
         
-# Exécuter le code     
+# Exécuter le code   
+# import sys
+
 if __name__ == '__main__':
     unittest.main()
 
+   # Exécuter le code   
+# import sys
+import unittest
+sys.path.extend(['.','..'])
+  
+if __name__ == '__main__':
+    unittest.main()
+
+     fruits = ['apple', 'baname', 'cherry']
+
+     self.assertin('apple',fruits)
+ 
         
